@@ -10,7 +10,7 @@ class DiceRoller extends StatefulWidget {
 class _DiceRollerState extends State<DiceRoller> {
   var activeDiceImage = 'assets/images/dice-2.png';
 
-  void RollDice() {
+  void rollDice() {
     setState(() {
       activeDiceImage = 'assets/images/dice-4.png';
     });
@@ -25,7 +25,7 @@ class _DiceRollerState extends State<DiceRoller> {
         Image.asset(activeDiceImage, width: 200),
         const SizedBox(height: 20),
         TextButton(
-          onPressed: RollDice,
+          onPressed: rollDice,
           style: TextButton.styleFrom(
             // padding: const EdgeInsets.only(top: 20),
             foregroundColor: Colors.white,
