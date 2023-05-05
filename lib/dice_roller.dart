@@ -1,4 +1,8 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
+
+// pour ne pas récréer à chaque fois le même objet // performance
+final Randomizer = Random();
 
 class DiceRoller extends StatefulWidget {
   const DiceRoller({super.key});
@@ -8,11 +12,14 @@ class DiceRoller extends StatefulWidget {
 }
 
 class _DiceRollerState extends State<DiceRoller> {
-  var activeDiceImage = 'assets/images/dice-2.png';
+  // var activeDiceImage = 'assets/images/dice-2.png';
+  var currentRollDice = 2;
 
   void rollDice() {
+    // var diceRoll = Random().nextInt(6) + 1;
     setState(() {
-      activeDiceImage = 'assets/images/dice-4.png';
+      // activeDiceImage = 'assets/images/dice-$diceRoll.png';
+      currentRollDice = Randomizer.nextInt(6) + 1;
     });
     print("L'image à changer");
   }
@@ -22,7 +29,11 @@ class _DiceRollerState extends State<DiceRoller> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Image.asset(activeDiceImage, width: 200),
+        Image.asset(
+          // activeDiceImage,
+          'assets/images/dice-$currentRollDice.png',
+          width: 200,
+        ),
         const SizedBox(height: 20),
         TextButton(
           onPressed: rollDice,
