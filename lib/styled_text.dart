@@ -7,6 +7,7 @@ class StyledText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
+      // 'Hello World'
       text,
       style: const TextStyle(
         color: Colors.white,
