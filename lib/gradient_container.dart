@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:roll_dice_app/styled_text.dart';
+// import 'package:roll_dice_app/styled_text.dart';
 
 const startAligment = Alignment.topLeft;
 const endAligment = Alignment.bottomRight;
@@ -8,6 +8,9 @@ class GradientContainer extends StatelessWidget {
   final List<Color> colors;
 
   const GradientContainer({required this.colors, super.key});
+
+  // methode dans un constructeur comme images.asset()
+  GradientContainer.purple({super.key}) : colors = [];
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,9 @@ class GradientContainer extends StatelessWidget {
           end: endAligment,
         ),
       ),
-      child: const Center(child: StyledText('Hello World !')),
+      child: Center(
+        child: Image.asset('assets/images/dice-2.png', width: 200),
+      ),
     );
   }
 }
