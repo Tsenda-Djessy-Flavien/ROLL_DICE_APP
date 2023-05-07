@@ -24,6 +24,9 @@ class _DiceRollerState extends State<DiceRoller> {
     print("L'image à changer");
   }
 
+  // Note : vous pouvez mettre toutes les images dans une liste
+  // et ensuite les afficher par rapport à leur index qui sera générer par la fun -> Random()
+
   @override
   Widget build(BuildContext context) {
     return Column(
